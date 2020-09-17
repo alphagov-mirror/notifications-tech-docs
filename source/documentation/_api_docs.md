@@ -168,9 +168,20 @@ If you are using the [test API key](#test), all your messages will come back wit
 
 All messages sent using the [team and guest list](#team-and-guest-list) or [live](#live) keys will appear on your dashboard.
 
-### Error codes
+### Errors
 
-If the request is not successful, the response body is `json`, refer to the table below for details.
+If the request is not successful, the response body is `json`, for example:
+
+```json
+{
+  "status_code": 400,
+  "errors": [
+    {"error": "BadRequestError", "message": "Can't send to this recipient using a team-only API key"}
+  ]
+}
+```
+
+Refer to the table below for the different errors you may get.
 
 |status_code|errors|How to fix|
 |:---|:---|:---|
